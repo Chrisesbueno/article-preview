@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14.5px;
+    font-family: 'Manrope';
+    background-color: var(--light-grayish-blue);
+}
+.container {
+    width: 350px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: white;
+    margin: 20px 20px 0;
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.left__container img{
+    object-position: 0 0;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+.right__container {
+    padding: 1rem 2rem;
+    line-height: 1.7;
+}
+.title {
+    font-size: 18px;
+    color: var(--very-dark-grayish-blue);
+}
+.text {
+    color: var(--desaturated-dark-blue);
+    margin-top: 1rem;
+}
+.principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 2rem;
+}
+.user {
+    display: flex;
+    align-items: center;
+}
+.user img {
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 1rem;
+}
+.name {
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+}
+.date {
+    color: var(--grayish-blue);
+}
+.principal .share {
+    background-color: var(--light-grayish-blue);
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--very-dark-grayish-blue);
+}
+.contact {
+    display: none;
+}
+/* MODAL MOBILE*/
+.show .contact {
+    display: flex;
+    align-items: center;
+    background-color: var(--very-dark-grayish-blue);
+    height: 75px;
+    padding-left: 2rem;
+    animation: popup 1s;
+}
+.contact p {
+    color: var(--grayish-blue);
+    letter-spacing: 5px;
+}
+.contact img {
+    margin-left: 1rem;
+}
+.contact .share {
+    margin-left: 4.5rem;
+    background-color: var(--desaturated-dark-blue);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--light-grayish-blue);
+    cursor: pointer;
+}
+.show .principal {
+    display: none;
+}
+.up-share {
+    display: none;
+}
+@keyframes popup {
+    from {background-color: var(--light-grayish-blue);}
+    to {background-color: var(--very-dark-grayish-blue);}
+}
+/* CREDITS -START- */
+.attribution {
+    margin-top: 1rem;
+    font-size: 13px;
+    color: var(--desaturated-dark-blue);
+}   
+.attribution a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+}
+.attribution a:hover {
+    color: var(--grayish-blue);
+}
+/* CREDITS -END- */
+@media screen and (min-width:768px) {
+    body {
+        height: 100vh;
+    }
+    .bg {
+        position: relative;
+    }
+    .container {
+        display: flex;
+        width: 800px;
+    }
+    .left__container img{
+        width: 330px;
+        height: 100%;
+    }
+    .title {
+        font-size: 24px;
+        margin: 0 auto 0;
+        color: var(--very-dark-grayish-blue);
+    }
+    .text {
+        color: var(--desaturated-dark-blue);
+        font-size: 15px;
+        margin: 1rem 0 0 0;
+    }
+    .principal {
+        padding: 0 2rem 0 2rem;
+    }
+    .name {
+        font-size: 15px;
+    }
+    .show .contact {
+        display: none;
+    }
+    .show .principal {
+        display: flex;
+        
+    }
+    .up-share {
+        display: none;
+    }
+    .show .up-share {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        letter-spacing: 5px;
+        width: 230px;
+        height: 50px;
+        position: absolute;
+        bottom: 20%;
+        left: 78%;
+        border-radius: 0.5rem;
+        color: var(--grayish-blue);
+        background-color: var(--very-dark-grayish-blue);
+        animation: fadeIn 1s;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+
+    }
+    .up-share::after{
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 7.5px solid transparent;
+        border-right: 7.5px solid transparent;
+        border-top: 10px solid var(--very-dark-grayish-blue);
+        position: absolute;
+        top: 100%;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+    }
+}
